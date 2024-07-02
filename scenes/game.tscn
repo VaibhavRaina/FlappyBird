@@ -1,0 +1,50 @@
+[gd_scene load_steps=12 format=3 uid="uid://dysdip7v0yfsh"]
+
+[ext_resource type="Texture2D" uid="uid://d0v7c2eonhhpw" path="res://assests/pipe.png" id="1_0k6re"]
+[ext_resource type="Script" path="res://scenes/scripts/game.gd" id="1_2mfuq"]
+[ext_resource type="PackedScene" uid="uid://c3dluhray4p4x" path="res://scenes/background.tscn" id="3_ufae6"]
+[ext_resource type="PackedScene" uid="uid://rtkm4vhfnfmq" path="res://scenes/bird.tscn" id="4_5tweb"]
+[ext_resource type="PackedScene" uid="uid://by7u3bkwnir3b" path="res://scenes/spanner.tscn" id="5_82i8k"]
+[ext_resource type="PackedScene" uid="uid://bddqnwrk2ir0b" path="res://scenes/obstackle.tscn" id="5_mmfc4"]
+[ext_resource type="Script" path="res://scenes/scripts/Camera2D.gd" id="5_n8ou6"]
+[ext_resource type="PackedScene" uid="uid://b88ywpulxn5rb" path="res://scenes/kill_zone.tscn" id="7_olxww"]
+[ext_resource type="PackedScene" uid="uid://4vrldfw3kagu" path="res://scenes/hud.tscn" id="8_uo7ml"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usuhi"]
+texture = ExtResource("1_0k6re")
+texture_region_size = Vector2i(38, 16)
+
+[sub_resource type="TileSet" id="TileSet_45d34"]
+sources/0 = SubResource("TileSetAtlasSource_usuhi")
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2mfuq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_45d34")
+format = 2
+
+[node name="Background" parent="." instance=ExtResource("3_ufae6")]
+
+[node name="Bird" parent="." instance=ExtResource("4_5tweb")]
+position = Vector2(155, -90)
+collision_priority = 5.0
+
+[node name="Camera2D" type="Camera2D" parent="Bird" node_paths=PackedStringArray("target")]
+zoom = Vector2(0.95, 0.95)
+script = ExtResource("5_n8ou6")
+target = NodePath("..")
+
+[node name="Spanner" parent="." instance=ExtResource("5_82i8k")]
+z_index = 2
+position = Vector2(261, -94)
+obstacle = ExtResource("5_mmfc4")
+
+[node name="KillZone" parent="." instance=ExtResource("7_olxww")]
+position = Vector2(542, -550)
+rotation = 3.14159
+
+[node name="KillZone2" parent="." instance=ExtResource("7_olxww")]
+position = Vector2(612, 360)
+
+[node name="Hud" parent="." instance=ExtResource("8_uo7ml")]

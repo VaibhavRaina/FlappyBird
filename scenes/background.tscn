@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3dluhray4p4x"]
+
+[ext_resource type="Texture2D" uid="uid://dt28yh1joj0nc" path="res://assests/background.png" id="1_m3hpc"]
+[ext_resource type="Texture2D" uid="uid://cgb3alknw5ry4" path="res://assests/ground.png" id="2_o0qyg"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Upper" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(540, 0)
+
+[node name="Upper" type="Sprite2D" parent="Upper"]
+position = Vector2(4, -524)
+scale = Vector2(1.14583, 1)
+texture = ExtResource("1_m3hpc")
+centered = false
+
+[node name="Lower" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(550, 0)
+
+[node name="Lower" type="Sprite2D" parent="Lower"]
+position = Vector2(279, 415)
+scale = Vector2(1.09524, 1)
+texture = ExtResource("2_o0qyg")
+
+[node name="Lower2" type="Sprite2D" parent="Lower"]
+position = Vector2(281.5, -603)
+scale = Vector2(1.10119, 1)
+texture = ExtResource("2_o0qyg")
+flip_v = true

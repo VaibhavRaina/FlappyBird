@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://4vrldfw3kagu"]
+
+[ext_resource type="Script" path="res://scenes/scripts/hud.gd" id="1_77b4l"]
+[ext_resource type="FontFile" uid="uid://qc2ropba3i53" path="res://scenes/flappyfont.TTF" id="1_vxln8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lynxq"]
+font = ExtResource("1_vxln8")
+font_size = 48
+font_color = Color(0.920995, 0.920995, 0.920995, 1)
+outline_size = 4
+outline_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_77b4l")
+
+[node name="score" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 479.0
+offset_bottom = 80.0
+text = "0"
+label_settings = SubResource("LabelSettings_lynxq")
+horizontal_alignment = 1
+vertical_alignment = 1
