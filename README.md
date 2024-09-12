@@ -1,6 +1,6 @@
 
 
-```
+
 # Flappy Bird Clone - Godot
 
 This is a Flappy Bird clone developed from scratch using the Godot engine. The entire codebase, design, and structure have been written by me, with no tutorials followed. You can play the game here: [Flappy Bird on Itch.io](https://vaibhav-raina.itch.io/flappy-bird).
@@ -66,4 +66,4 @@ FlappyBird/
 - **Email**: [vaibhavraina12345@gmail.com](mailto:vaibhavraina12345@gmail.com)
 - **Play the game**: [Flappy Bird on Itch.io](https://vaibhav-raina.itch.io/flappy-bird)
 - Built entirely with: **Godot Engine**
-```
+
