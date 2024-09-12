@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dysdip7v0yfsh"]
+[gd_scene load_steps=13 format=3 uid="uid://dysdip7v0yfsh"]
 
 [ext_resource type="Texture2D" uid="uid://d0v7c2eonhhpw" path="res://assests/pipe.png" id="1_0k6re"]
 [ext_resource type="Script" path="res://scenes/scripts/game.gd" id="1_2mfuq"]
@@ -17,6 +17,9 @@ texture_region_size = Vector2i(38, 16)
 [sub_resource type="TileSet" id="TileSet_45d34"]
 sources/0 = SubResource("TileSetAtlasSource_usuhi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u64il"]
+size = Vector2(1000, 2000)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2mfuq")
 
@@ -34,6 +37,11 @@ collision_priority = 5.0
 zoom = Vector2(0.95, 0.95)
 script = ExtResource("5_n8ou6")
 target = NodePath("..")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Bird"]
+position = Vector2(126, 42)
+shape = SubResource("RectangleShape2D_u64il")
+action = "jump"
 
 [node name="Spanner" parent="." instance=ExtResource("5_82i8k")]
 z_index = 2
